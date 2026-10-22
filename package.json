@@ -1,0 +1,27 @@
+{
+  "name": "justo-horarios-bot",
+  "version": "1.0.0",
+  "description": "Automatizacion de disponibilidad Justo por turnos",
+  "main": "bot.js",
+  "scripts": {
+    "login": "node bot.js login",
+    "inventory": "node bot.js inventory",
+    "plan": "node bot.js plan",
+    "apply": "node bot.js apply",
+    "start": "node scheduler.js",
+    "service:install": "powershell -NoProfile -ExecutionPolicy Bypass -File install-pm2.ps1",
+    "service:status": "pm2 describe justo-bot",
+    "service:logs": "pm2 logs justo-bot --lines 40 --nostream",
+    "test": "node --test schedule.test.js scheduler.test.js portal-dialogs.test.js",
+    "install:browsers": "playwright install chromium"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^18.0.8",
+    "node-cron": "^4.6.0",
+    "playwright": "^1.64.1"
+  }
+}
